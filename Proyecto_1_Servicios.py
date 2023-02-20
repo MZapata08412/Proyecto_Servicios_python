@@ -343,11 +343,16 @@ def cliente_w():#Se registran los datos cliente
     #Funciones para ventana cliente
     def guardar_cliente():
         global MESSAGE
-        MESSAGE = 'Guardado de cliente' # Cambia el valor del mensaje
-        socket_tcp.send(MESSAGE.encode('utf-8')) # Se envían datos al servidor
         nombre_cliente = nombre.get()
         email = correo.get()
         telefono = celular.get()
+        MESSAGE = 'Se agrego nuevo cliente: ' + str(nombre_cliente) # Cambia el valor del mensaje
+        socket_tcp.send(MESSAGE.encode('utf-8')) # Se envían datos al servidor
+        MESSAGE = 'Correo cliente: ' + str(email)
+        socket_tcp.send(MESSAGE.encode('utf-8'))
+        MESSAGE = 'Telefono cliente: ' + str(telefono)
+        socket_tcp.send(MESSAGE.encode('utf-8'))
+
 
         new=open("clientes.txt","a") # Se ingresan datos al archivo movimientos
         
@@ -570,7 +575,7 @@ def Ventana_about():# Se define la venta about del creador de la aplicacion
     
     
 # Definicón de Labels en la ventana Principal
-Label1=tk.Label(text="Bienvenido",font=("Times New Roman","20"),foreground="Black",width=30, height=1, bg="#CCCCFF")
+Label1=tk.Label(text="Bienvenido",font=("Times New Roman","20"),foreground="Black",width=30, height=1, bg="#8A2BE2")
 
 # Definición de Botones para la ventana Principal
 boton_comprar=Button(ventana,text="Comprar",font=("Helvetica",15),background="Magenta",command=cliente_w)
