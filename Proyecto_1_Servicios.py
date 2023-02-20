@@ -125,12 +125,12 @@ def comprar_w(): # Función de venta y cobro de productos
                 elif opcion==2:
                     vuelto=1000-int(datos[pos][5])
                     pago=500
-                    messagebox.showinfo(message="Venta exitosa, su vuelto es: "+str(vuelto), title="vuelto")
+                    messagebox.showinfo(message="Venta de servicio exitoso, su vuelto es: "+str(vuelto), title="vuelto")
                 elif opcion==3:
                     vuelto=500-int(datos[pos][5])
                     pago=500
-                    messagebox.showinfo(message="Venta exitosa, su vuelto es: "+str(vuelto), title="vuelto")
-                MESSAGE = 'Sevicio pagado' + str(vuelto)
+                    messagebox.showinfo(message="Venta de servicio exitoso, su vuelto es: "+str(vuelto), title="vuelto")
+                MESSAGE = 'Sevicio pagado, su vuelto es: ' + str(vuelto)
                 socket_tcp.send(MESSAGE.encode('utf-8'))
                 MESSAGE = 'Servivio adquirido' # Cambia el valor del mensaje
                 socket_tcp.send(MESSAGE.encode('utf-8')) # Se envían datos al servidor
@@ -210,12 +210,7 @@ def comprar_w(): # Función de venta y cobro de productos
             botonPagar.place(x=50,y=475)
             
             
-        
-        
-    
 
-    
-        
     a_file = open("archivo.txt", "r") # Leyendo el archivo de texto de productos disponibles
 
     m_datos = [] # Variable que lee el archivo de texto con los productos disponibles
@@ -362,9 +357,7 @@ def cliente_w():#Se registran los datos cliente
         ventana_cliente.destroy()
         comprar_w()
 
-        
-
-
+  
     #Variables
     nombre = StringVar()
     correo = StringVar()
@@ -388,11 +381,8 @@ def cliente_w():#Se registran los datos cliente
 
 
 
-    ventana_cliente.mainloop()
+    ventana_cliente.mainloop() #Loop de ventana cliente
         
-    
-    
-
 
 def password(): # Se genera la ventana para la captura de la contrase del adminiostrador
     ventana.withdraw()
@@ -462,7 +452,7 @@ def password(): # Se genera la ventana para la captura de la contrase del admini
             ventana_admin.destroy()
             messagebox.showinfo(message="Datos Reiniciados", title="Administrador")
             global MESSAGE
-            MESSAGE = "Administrador Reinicio Datos" # Cambia el valor del mensaje
+            MESSAGE = "Administrador ha reiniciado historial de datos" # Cambia el valor del mensaje
             socket_tcp.send(MESSAGE.encode('utf-8')) # Se envían datos al servidor
             ventana.deiconify()
 
@@ -532,8 +522,6 @@ def password(): # Se genera la ventana para la captura de la contrase del admini
     E_password.place(x=85,y=80)
     boton_pasword=Button(ventana_pasword,text="Ingresar",font=("Helvetica",12),background="Magenta",command=contraseña)
     boton_pasword.place(x=110,y=120)
-
-
     ventana_pasword.mainloop() # Loop de la ventana password de ingresos a datos de administrador
 
         
@@ -547,11 +535,11 @@ def Ventana_about():# Se define la venta about del creador de la aplicacion
     ventana_about.minsize(800,650)
     ventana_about.configure(background="#8A2BE2")
     ventana_about.resizable(width=NO,height=NO)
+
     # Definicion de fucion cerrar para ventana aboout
     def cerrar_about():
         ventana_about.destroy()
         ventana.deiconify()
-
 
 
     # Creacion de etiquetas para la ventana about

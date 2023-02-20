@@ -12,7 +12,7 @@ BUFFER_SIZE = 1024
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as socket_tcp:
 
     socket_tcp.bind((host, port)) 
-    socket_tcp.listen(5) # Tiempo de refrescamiento  
+    socket_tcp.listen(3) # Tiempo de refrescamiento  
     conn, addr = socket_tcp.accept() # Comunicación con el cliente 
     with conn:
         print('[*] Conexión exitosa') 
