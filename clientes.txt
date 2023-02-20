@@ -1,0 +1,12 @@
+nombre correo telefono
+Manuel manuel@gmail.com 12354
+Esther esther@gmail.com 542654
+Ariel ariel@gmail.com 45687
+Alejandro ale@gmail.com 4848474
+Gilmar gilmar@gmail.com 15115848
+Juan juan@gmail.com 848485
+Saul  saul@gmail.com 5484464
+Esther esther@gmail.com 848482181
+Elba elba@gmail.com 7484848
+Leo leo@gmail.com 48497
+Mariel mariel@gmail.com 45544

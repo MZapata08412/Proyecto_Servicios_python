@@ -1,0 +1,1 @@
+Tipo #Servicio Date Time Code Descripcion Cantidad Vendido Monto Pago Vuelto Existencia Ventas
