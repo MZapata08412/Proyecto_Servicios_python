@@ -454,6 +454,10 @@ def password(): # Se genera la ventana para la captura de la contrase del admini
             archivo=open("movimientos.txt","w")
             line=archivo.writelines("Tipo #Servicio Date Time Code Descripcion Cantidad Vendido Monto Pago Vuelto Existencia Ventas"+"\n")
             archivo.close()
+            archivo2=open("clientes.txt","w")
+            line=archivo2.writelines("Nombre Correo Telefono"+"\n")
+            archivo2.close()
+            
             ventana_admin.destroy()
             messagebox.showinfo(message="Datos Reiniciados", title="Administrador")
             global MESSAGE
@@ -493,13 +497,24 @@ def password(): # Se genera la ventana para la captura de la contrase del admini
                          " "+m_datos[i][1]+" "+m_datos[i][2]+" "+m_datos[i][3]
                          +" "+m_datos[i][6]+" "+m_datos[i][8],font=("Helvetica",10)
                          ,foreground="Black",width=70, height=1, bg="#CCCCFF").grid(row=i,column=0)
+                
+        def dato_cliente(): # Se lee datos de clientes guardados en archivo clientes.txt 
+            a_file = open("clientes.txt", "r") # Leyendo el archivo de texto clientes
+
+            m_datos = [] # Variable que lee el archivo de texto con los servicios disponibles
+            for line in a_file: # Ciclo que genera una matriz con los datos leidos del archivo .txt de los servicios disponibles
+                stripped_line = line.strip()
+                line_list = stripped_line.split()
+                m_datos.append(line_list)
+            a_file.close()
+            pos=len(m_datos)        
+            for i in range(pos):
+                tk.Label(second_frame,text=str(m_datos[i]) ,font=("Helvetica",10),foreground="Black",
+                         width=70,height=1,bg="#CCCCFF").grid(row=i,column=0)
+
+
             
-            
-            
-            
-            
-        
-        
+
         boton_reset=Button(ventana_admin,text="Reiniciar",font=("Helvetica",12),background="Magenta",command=Reset)#.grid(row=10,column=20)
         boton_reset.place(x=50,y=500)
         boton_Apagar=Button(ventana_admin,text="Apagar",font=("Helvetica",12),background="Magenta",command=ventana.destroy)#.grid(row=12,column=20)
@@ -509,7 +524,10 @@ def password(): # Se genera la ventana para la captura de la contrase del admini
         boton_VentaD=Button(ventana_admin,text="Detalle Contrato",font=("Helvetica",12),background="Magenta",command=Venta_D)#.grid(row=16,column=20)
         boton_VentaD.place(x=510,y=500)
         boton_return=Button(ventana_admin,text="Regresar",font=("Helvetica",12),background="Magenta",command=cerrar_Admin)#.grid(row=16,column=20)
-        boton_return.place(x=50,y=550)
+        boton_return.place(x=150,y=550)
+        boton_cliente=Button(ventana_admin,text="Clientes",font=("Helvetica",12),background="Magenta",command=dato_cliente)#.grid(row=16,column=20)
+        boton_cliente.place(x=50,y=550)
+        
         
         # Labels
         label=tk.Label(ventana_admin,text="Administrador",font=("Helvetica",20),foreground="Black",width=30, height=1, bg="#CCCCFF")#.grid(row=500,column=200)

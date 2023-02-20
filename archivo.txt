@@ -1,12 +1,12 @@
 #servicio tipo disponible maximo costo precio venta
-1 Electrico 25 30 300 500 7500
+1 Electrico 24 30 300 500 8000
 2 Internet 28 30 300 500 5500
 3 Computo 23 30 600 1000 11500
 4 Lavandería 29 30 300 500 5000
 5 Libreria 30 30 300 500 4500
-6 CableTv 27 30 300 500 6000
+6 CableTv 26 30 300 500 6500
 7 Agua 27 30 300 500 6000
-8 Juridico 30 30 300 500 5000
+8 Juridico 29 30 300 500 5500
 9 Transporte 27 30 300 500 7000
 10 Floristeria 26 30 300 500 7000
 11 Construccion 25 30 250 500 8500
